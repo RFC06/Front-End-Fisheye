@@ -1,5 +1,5 @@
 // photographer.js
-export function photographerFactory(data) {
+/*export function photographerFactory(data) {
   const { id, name, city, tagline, price, portrait } = data;
   const article = document.createElement('article');
 
@@ -12,4 +12,4 @@ export function photographerFactory(data) {
   `;
 
   return article;
-}
+}*/
