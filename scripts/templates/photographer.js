@@ -1,16 +1,17 @@
-// photographer.js
-export function photographerFactory(data) {
-    const { id, name, city, tagline, price, portrait } = data;
-    
-    const article = document.createElement('article');
+function photographerTemplate(data) {
+    const { name, portrait } = data;
 
-    article.innerHTML = `
-        <img src="assets/photographers/${portrait}" alt="${name}" height="100px">
-        <h2>${name}</h2>
-        <p>${city}</p>
-        <p>${tagline}</p>
-        <p>${price}€/jour</p>
-    `;
+    const picture = `assets/photographers/${portrait}`;
 
-    return article;
+    function getUserCardDOM() {
+        const article = document.createElement( 'article' );
+        const img = document.createElement( 'img' );
+        img.setAttribute("src", picture)
+        const h2 = document.createElement( 'h2' );
+        h2.textContent = name;
+        article.appendChild(img);
+        article.appendChild(h2);
+        return (article);
+    }
+    return { name, picture, getUserCardDOM }
 }
