@@ -1,4 +1,4 @@
-@import url("photographer.css");
+
 
 body {
     font-family: "DM Sans", sans-serif;
@@ -47,7 +47,20 @@ h1 {
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border:solid;
+    border-radius:50%;
 }
+
+.photograph-header img {
+    width: 150px; /* Largeur de l'image */
+    height: 150px; /* Hauteur de l'image */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    object-fit: cover; /* Recadre l'image pour qu'elle remplisse le conteneur de manière uniforme */
+  }
+  
+
+
+
 /*test css ok/*
 body {
     background-color: #f0f0f0; /* Par exemple, changer le fond en gris clair

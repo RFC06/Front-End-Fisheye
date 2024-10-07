@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe</title>
-  </head>
-  <body>
+    <title>Fisheye - Photographe</title>
+</head>
+<body>
     <header>
-      <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
+        <a href="index.html">
+            <img src="assets/images/logo.png" class="logo" alt="Fisheye logo" />
+        </a>
     </header>
+
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+        <!-- Section principale pour le profil du photographe -->
+        <div class="photograph-header">
+            <!-- Les informations du photographe seront insérées ici via JavaScript -->
+            <div class="photographer-info">
+                <!-- Cette section contiendra le portrait et les infos (nom, ville, pays, tagline) -->
+            </div>
+
+            <!-- Bouton de contact du photographe -->
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+
+        <!-- Section pour la galerie des médias du photographe -->
+        <section class="media-section">
+            <!-- Les médias du photographe seront insérés ici via JavaScript -->
+        </section>
     </main>
+
+    <!-- Modal de contact -->
     <div id="contact_modal">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" alt="Fermer le formulaire de contact" onclick="closeModal()" />
-        </header>
-        <form>
-          <div>
-            <label for="prenom">Prénom</label>
-            <input id="prenom" type="text" />
-          </div>
-          <button class="contact_button" type="submit">Envoyer</button>
-        </form>
-      </div>
+        <div class="modal">
+            <header>
+                <h2>Contactez-moi</h2>
+                <img src="assets/icons/close.svg" alt="Fermer le formulaire de contact" onclick="closeModal()" />
+            </header>
+            <form>
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" type="text" />
+                </div>
+                <button class="contact_button" type="submit">Envoyer</button>
+            </form>
+        </div>
     </div>
+
     <!-- Scripts -->
     <script type="module" src="./scripts/pages/photographer.js"></script>
     <script type="module" src="/scripts/utils/contactForm.js"></script>
-  </body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe</title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" alt="Fermer le formulaire de contact" onclick="closeModal()" />
-        </header>
-        <form>
-          <div>
-            <label for="prenom">Prénom</label>
-            <input id="prenom" type="text" />
-          </div>
-          <button class="contact_button" type="submit">Envoyer</button>
-        </form>
-      </div>
-    </div>
-    <!-- Scripts -->
-    <script type="module" src="./scripts/pages/photographer.js"></script>
-    <script type="module" src="/scripts/utils/contactForm.js"></script>
-  </body>
+</body>
 </html>

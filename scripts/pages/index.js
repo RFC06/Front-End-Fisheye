@@ -19,7 +19,7 @@ async function getPhotographers() {
 
 // Appelez getPhotographers et ajoutez les éléments au DOM
 getPhotographers().then((photographerList) => {
-    const photographersSection = document.querySelector('.photographers-section');
+    const photographersSection = document.querySelector('.photographer_section');
     
     if (photographersSection) {
         photographerList.forEach((photographer) => {
@@ -82,3 +82,4 @@ getMedias().then((mediaList) => {
 
 
 // PARTIE DES MEDIAS : END //
+
