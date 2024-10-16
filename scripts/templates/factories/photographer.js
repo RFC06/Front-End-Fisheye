@@ -430,7 +430,7 @@ const data = {
 		{
 			"id": 95293534,
 			"photographerId": 195,
-			"title": "Mountain and Lake",
+			"title": "Marcel/Mountain and Lake",
 			"image": "Travel_OpenMountain.jpg",
 			"likes": 33,
 			"date": "2019-05-12",
@@ -631,7 +631,6 @@ function displayPhotographerInfo(photographer) {
   `;
 }
 
-// Fonction pour afficher les médias du photographe dans la section `media-section`
 // Fonction pour afficher les médias du photographe dans la section `media-section`
 function displayPhotographerMedia(photographer, media) {
     const mediaSection = document.querySelector('.media-section');
