@@ -621,14 +621,17 @@ function getMediaByPhotographerId(id) {
 function displayPhotographerInfo(photographer) {
   const photographerInfoDiv = document.querySelector('.photographer-info');
   photographerInfoDiv.innerHTML = `
-      <img src="assets/photographers/${photographer.portrait}" alt="${photographer.name}">
-      <div>
+      
           <h2>${photographer.name}</h2>
-          <p>${photographer.city}, ${photographer.country}</p>
-          <p>${photographer.tagline}</p>
-          <p>${photographer.price}€/jour</p>
-      </div>
-  `;
+          <p class="photographer-location">${photographer.city}, ${photographer.country}</p>
+          <p class="photographer-tagline">${photographer.tagline}</p>`;
+
+
+
+		document.querySelector('.photographer-picture').innerHTML = `<img src="assets/photographers/${photographer.portrait}" alt="${photographer.name}"></img>
+		  `
+		
+		  
 }
 
 // Fonction pour afficher les médias du photographe dans la section `media-section`

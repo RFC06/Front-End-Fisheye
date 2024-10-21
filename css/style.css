@@ -51,13 +51,7 @@ h1 {
     border-radius:50%;
 }
 
-.photograph-header img {
-    width: 150px; /* Largeur de l'image */
-    height: 150px; /* Hauteur de l'image */
-    border-radius: 50%; /* Pour rendre l'image circulaire */
-    object-fit: cover; /* Recadre l'image pour qu'elle remplisse le conteneur de manière uniforme */
-  }
-  
+
 
 
 

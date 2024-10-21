@@ -2,11 +2,6 @@
     display: none;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-}
 
 .contact_button {
     font-size: 20px;
@@ -78,17 +73,74 @@ form input {
 
 /*  partie section et media jo   */
 
+.wrapper {
+  margin: 0 100px; 
+}
+
+
 .photograph-header {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:30px;
+
     background-color: #FAFAFA;
-    padding: 40px 100px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+    padding: 60px 100px;
+    border-radius: 5px;
+  
 }
 
 .photographer-info {
-    flex: 1;
+ 
 }
+
+.photographer-info h2 {
+    font-size: 64px;
+    font-weight: 400;
+    color: #D3573C;
+    margin: 10px 0;
+}
+
+.photographer-info p.photographer-location {
+    font-size: 24px;
+    font-weight: 400;
+    color: #901C1C;
+    margin: 10px 0;
+}
+
+.photographer-info p.photographer-location {
+    font-size: 24px;
+    font-weight: 400;
+    color: #901C1C;
+    margin: 10px 0;
+}
+.photographer-info p.photographer-tagline {
+    font-size: 18px;
+    font-weight: 400;
+    color: #525252;
+    margin: 10px 0;
+}
+
+.photographer-contact {
+    display: grid;
+    place-content: center;
+
+   
+}
+
+.photographer-picture {
+    display: grid;
+    justify-content: end;
+    align-items: center;  
+}
+
+.photographer-picture img {
+    width: 200px; /* Largeur de l'image */
+    height: 200px; /* Hauteur de l'image */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    object-fit: cover; /* Recadre l'image pour qu'elle remplisse le conteneur de manière uniforme */
+  }
+  
 
 .photographer-info img {
     border-radius: 50%;
@@ -97,18 +149,6 @@ form input {
     object-fit: cover;
 }
 
-.photographer-info h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #901C1C;
-    margin: 10px 0;
-}
-
-.photographer-info p {
-    color: #555;
-    font-size: 18px;
-    margin: 0;
-}
 
 /*  partie media jo   */
 
@@ -116,7 +156,7 @@ form input {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    padding: 50px 100px;
+    padding: 50px 0px;
     background-color: #fff;
 }
 

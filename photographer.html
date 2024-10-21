@@ -18,232 +18,32 @@
 
     <main id="main">
         <!-- Section principale pour le profil du photographe -->
-        <div class="photograph-header">
+        <div class="wrapper photograph-header">
             <!-- Les informations du photographe seront insérées ici via JavaScript -->
+            
             <div class="photographer-info">
-                <!-- Cette section contiendra le portrait et les infos (nom, ville, pays, tagline) -->
+                 <!-- Cette section contiendrales infos (nom, ville, pays, tagline) -->
             </div>
 
+
+        <div class= "photographer-contact">
             <!-- Bouton de contact du photographe -->
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
 
+        <div class="photographer-picture">
+             <!-- Cette section contiendra le portrait -->
+              <img src="assets/photographers/${photographer.portrait}" alt="${photographer.name}">
+            </div>
+        </div>
+
         <!-- Section pour la galerie des médias du photographe -->
-        <section class="media-section">
+        <section class="wrapper media-section">
             <!-- Les médias du photographe seront insérés ici via JavaScript -->
         </section>
+        </main>
 
 
-
-<!-- section photograph header -->
-
-<div class="photograph-header">
-
-    <div class="photographer-info">
-
-        <h1>Kold Barkley</h1>
-
-        <p>Auckland, New Zealand</p>
-
-        <p>Photographe et réalisateur</p>
-
-    </div>
-
-
-    <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-
-
-    <img src="assets/photographers/photographer.jpg" alt="Photo du photographe" class="photographer-photo">
-
-</div>
-
-
-
-    <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-
-
-    <img src="assets/photographers/photographer.jpg" alt="Photo du photographe" class="photographer-photo">
-
-</div>
-
-<!-- section photograph header terminé -->
-
-  
-
-  
-
-  
-
-  
-
- <!-- menu déroulant --> 
-
-  
-
-  <div class="sort-container">
-
-    <label for="sort" id="sort-label" class="sort-label">Trier par :</label>
-
-    <button id="sort-button" class="sort-button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="sort-label">
-
-        Popularité ⮟
-
-    </button>
-
-    <ul id="sort-options" class="sort-options" role="listbox" aria-labelledby="sort-label">
-
-        <li role="option" tabindex="0" data-value="popularity">Popularité</li>
-
-        <li role="option" tabindex="0" data-value="date">Date</li>
-
-        <li role="option" tabindex="0" data-value="title">Titre</li>
-
-    </ul>
-
-</div>
-
-
-  <!-- menu déroulant terminé --> 
-
-  
-
-   <!-- médias section --> 
-
-  
-
-  <section class="media-section">
-
-    
-
-    <!-- bloc médias 1 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media1.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-    
-
-    <!-- bloc médias 2 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media2.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-    <!-- Répéter pour les autres 
-
-<!-- bloc médias 2 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media2.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-    
-
-    <!-- bloc médias 2 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media2.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-    
-
-    <!-- bloc médias 2 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media2.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-    
-
-    <!-- bloc médias 2 --> 
-
-    <div class="media-item">
-
-        <a href="#" class="lightbox-link">
-
-            <img src="assets/medias/media2.jpg" alt="Titre de l'image" class="media-img">
-
-        </a>
-
-        <p class="media-caption">Titre de l'image</p>
-
-    </div>
-
-
-
-
-
-</section>
-
-<!-- médias section --> 
-
-
-
-
-
-
-
-
-
-
-    </main>
-
-    <!-- Modal de contact -->
-    <div id="contact_modal">
-        <div class="modal">
-            <header>
-                <h2>Contactez-moi</h2>
-                <img src="assets/icons/close.svg" alt="Fermer le formulaire de contact" onclick="closeModal()" />
-            </header>
-            <form>
-                <div>
-                    <label for="prenom">Prénom</label>
-                    <input id="prenom" type="text" />
-                </div>
-                <button class="contact_button" type="submit">Envoyer</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script type="module" src="./scripts/pages/photographer.js"></script>
