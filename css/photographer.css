@@ -72,28 +72,22 @@ form input {
 }
 
 /*  partie section et media jo   */
-
+/* Style général */
 .wrapper {
-  margin: 0 100px; 
+    margin: 0 100px;
 }
 
-
+/* En-tête de la page pour les informations du photographe */
 .photograph-header {
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap:30px;
-
+    gap: 30px;
     background-color: #FAFAFA;
     padding: 60px 100px;
     border-radius: 5px;
-  
 }
 
-.photographer-info {
- 
-}
-
+/* Informations sur le photographe */
 .photographer-info h2 {
     font-size: 64px;
     font-weight: 400;
@@ -108,12 +102,6 @@ form input {
     margin: 10px 0;
 }
 
-.photographer-info p.photographer-location {
-    font-size: 24px;
-    font-weight: 400;
-    color: #901C1C;
-    margin: 10px 0;
-}
 .photographer-info p.photographer-tagline {
     font-size: 18px;
     font-weight: 400;
@@ -121,65 +109,40 @@ form input {
     margin: 10px 0;
 }
 
+/* Boutons et images du photographe */
 .photographer-contact {
     display: grid;
     place-content: center;
-
-   
 }
 
 .photographer-picture {
     display: grid;
     justify-content: end;
-    align-items: center;  
+    align-items: center;
 }
 
 .photographer-picture img {
-    width: 200px; /* Largeur de l'image */
-    height: 200px; /* Hauteur de l'image */
-    border-radius: 50%; /* Pour rendre l'image circulaire */
-    object-fit: cover; /* Recadre l'image pour qu'elle remplisse le conteneur de manière uniforme */
-  }
-  
-
-.photographer-info img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
     object-fit: cover;
 }
 
-
-/*  partie media jo   */
-div.sort-container button.sort-button {
-    padding: 20px 20px;
-    font-size: 18px;
-    font-weight: 700px;
-    color:white;
-    background-color: #901C1C;
-    border:0;
-    border-radius:5px;
-    cursor:pointer;
- 
- }
-div.sort-container ul.sort-options {
-   display:none;
-
-
-}
-
-
+/* Section des médias */
 .media-section {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    padding: 50px 0px;
+    padding: 50px 0;
     background-color: #fff;
 }
 
+/* Cartes des médias avec taille fixe */
 .media-section img, .media-section video {
-    width: 100%;
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
+    object-fit: cover; /* Remplissage uniforme de la carte */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -188,8 +151,7 @@ div.sort-container ul.sort-options {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/*    modal  */
-
+/* Style du modal de contact */
 #contact_modal {
     display: none;
     position: fixed;
@@ -197,10 +159,10 @@ div.sort-container ul.sort-options {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Assombrit l'arrière-plan */
+    background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
-    z-index: 10; /* S'assure que la modal est au-dessus de tout */
+    z-index: 10;
 }
 
 .modal {
@@ -212,8 +174,8 @@ div.sort-container ul.sort-options {
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    z-index: 11; /* Pour être au-dessus de l'overlay */
-    animation: slideDown 0.5s ease-out; /* Ajout d'animation */
+    z-index: 11;
+    animation: slideDown 0.5s ease-out;
 }
 
 @keyframes slideDown {
@@ -227,31 +189,7 @@ div.sort-container ul.sort-options {
     }
 }
 
-.modal header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.modal header img {
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.modal header img:hover {
-    transform: rotate(90deg); /* Ajoute un effet lors de la fermeture */
-}
-
-.modal header h2 {
-    font-size: 32px; /* Ajusté pour la taille de la modal */
-    font-weight: normal;
-    text-align: center;
-}
-
-
-
-/* TEST MENU DEROULANT*/
-
+/* Style des liens dans le menu déroulant */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -290,6 +228,7 @@ div.sort-container ul.sort-options {
     display: block;
 }
 
+/* Galerie d'images */
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -307,5 +246,3 @@ div.sort-container ul.sort-options {
     height: 100%;
     object-fit: cover;
 }
-
-

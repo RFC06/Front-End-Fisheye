@@ -712,7 +712,7 @@ export function sortImages(criteria) {
     images.sort((a, b) => {
         if (criteria === "popularity") {
             return b.getAttribute("data-likes") - a.getAttribute("data-likes");
-        } else if (criteria === "date") {
+        } else if (criteria === "likes") {
             return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
         } else if (criteria === "title") {
             return a.getAttribute("data-title").localeCompare(b.getAttribute("data-title"));

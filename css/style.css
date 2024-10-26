@@ -45,21 +45,35 @@ h1 {
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
-    text-decoration: none; /* Supprime le soulignement */
+    text-decoration: none; 
 }
 
 /* Style des images */
 .photographer_section article img {
     height: 200px;
     width: 200px;
-    border: solid;
-    border-radius: 50%; /* Forme circulaire */
-    object-fit: cover; /* Garde l’image centrée sans déformation */
-    object-position: center; /* Centre l'image dans le cadre */
-    transition: transform 0.3s ease; /* Effet de transition (si d'autres effets sont ajoutés) */
+   
+    border-radius: 50%; 
+    object-fit: cover; 
+    object-position: center; 
+    transition: transform 0.3s ease; 
 }
 
 /* Style des liens */
 a {
-    text-decoration: none; /* Supprime le soulignement pour tous les liens */
+    text-decoration: none; 
+}
+
+/* Style des liens */
+a {
+    
+  
+text-decoration: none; 
+    color: inherit; 
+}
+
+a:visited {
+    
+
+color: inherit; 
 }
