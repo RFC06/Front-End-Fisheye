@@ -691,3 +691,9 @@ function initPhotographerPage() {
 
 // Lancer l'initialisation de la page
 initPhotographerPage();
+
+
+document.getElementById('sort-button').addEventListener('click',() => {  
+const sortOptionsElement = document.getElementById('sort-options');
+sortOptionsElement.style.display = 'block';
+});
