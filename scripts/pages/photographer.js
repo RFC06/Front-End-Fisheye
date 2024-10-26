@@ -1,6 +1,9 @@
 
 //création de pages pour chaque photographes
 
+
+
+
 // Exemple de données des photographes et des médias (à remplacer par les données réelles)
 const data = {
   photographers: [
@@ -697,3 +700,25 @@ document.getElementById('sort-button').addEventListener('click',() => {
 const sortOptionsElement = document.getElementById('sort-options');
 sortOptionsElement.style.display = 'block';
 });
+
+
+
+// FONCTION MENU DÉROULANT
+
+export function sortImages(criteria) {
+    const gallery = document.getElementById("gallery");
+    const images = Array.from(gallery.getElementsByClassName("image"));
+
+    images.sort((a, b) => {
+        if (criteria === "popularity") {
+            return b.getAttribute("data-likes") - a.getAttribute("data-likes");
+        } else if (criteria === "date") {
+            return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
+        } else if (criteria === "title") {
+            return a.getAttribute("data-title").localeCompare(b.getAttribute("data-title"));
+        }
+    });
+
+    images.forEach(image => gallery.appendChild(image));
+}
+

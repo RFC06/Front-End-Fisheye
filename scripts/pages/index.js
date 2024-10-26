@@ -1,6 +1,10 @@
 // index.js
 import { photographerFactory } from '../templates/photographer.js';
 import { mediaFactory } from '../templates/media.js';
+import { sortImages } from '../utils/sortImages.js';  // Chemin relatif vers sortImages.js
+
+// Code pour gérer les photographes et les médias, comme défini précédemment
+
 
 
 // PARTIE DES PHOTOGRAPHES : START //

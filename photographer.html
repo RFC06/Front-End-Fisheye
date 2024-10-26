@@ -60,16 +60,53 @@
 
         </div>
 
-        <!-- Section pour la galerie des médias du photographe -->
+        <!-- menu déroulant terminé -->
+</div>
+
+<!-- Section pour le menu de tri -->
+<div class="dropdown">
+    <button class="dropbtn">Trier par</button>
+    <div class="dropdown-content">
+        <a href="#" onclick="sortImages('popularity')">Popularité</a>
+        <a href="#" onclick="sortImages('date')">Date</a>
+        <a href="#" onclick="sortImages('title')">Titre</a>
+    </div>
+</div>
+
+<!-- Section pour la galerie des médias du photographe -->
+<section class="wrapper media-section" id="gallery">
+    <!-- Les médias du photographe seront insérés ici via JavaScript -->
+</section>
+</main>
+
+<!-- Scripts -->
+<script type="module" src="./scripts/pages/photographer.js"></script>
+<script type="module" src="/scripts/utils/contactForm.js"></script>
+<script src="/scripts/utils/sortImages.js"></script> <!-- Ajout du script pour le tri -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Section pour la galerie des médias du photographe 
         <section class="wrapper media-section">
-            <!-- Les médias du photographe seront insérés ici via JavaScript -->
-        </section>
-        </main>
+     Les médias du photographe seront insérés ici via JavaScript -->
+      
 
 
 
-    <!-- Scripts -->
+    <!-- Scripts 
     <script type="module" src="./scripts/pages/photographer.js"></script>
     <script type="module" src="/scripts/utils/contactForm.js"></script>
 </body>
-</html>
+</html>-->

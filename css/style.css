@@ -1,11 +1,12 @@
 
-
+/* Style général */
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    background-color:white;
 }
 
-
+/* En-tête */
 header {
     display: flex;
     flex-direction: row;
@@ -24,6 +25,7 @@ h1 {
     margin-left: 100px;
 }
 
+/* Section des photographes */
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -39,22 +41,25 @@ h1 {
     flex-direction: column;
 }
 
+/* Style des titres */
 .photographer_section article h2 {
     color: #D3573C;
     font-size: 36px;
+    text-decoration: none; /* Supprime le soulignement */
 }
 
+/* Style des images */
 .photographer_section article img {
     height: 200px;
     width: 200px;
-    border:solid;
-    border-radius:50%;
+    border: solid;
+    border-radius: 50%; /* Forme circulaire */
+    object-fit: cover; /* Garde l’image centrée sans déformation */
+    object-position: center; /* Centre l'image dans le cadre */
+    transition: transform 0.3s ease; /* Effet de transition (si d'autres effets sont ajoutés) */
 }
 
-
-
-
-
-/*test css ok/*
-body {
-    background-color: #f0f0f0; /* Par exemple, changer le fond en gris clair
+/* Style des liens */
+a {
+    text-decoration: none; /* Supprime le soulignement pour tous les liens */
+}
