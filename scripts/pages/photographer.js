@@ -637,7 +637,7 @@ function displayPhotographerInfo(photographer) {
 		  
 }
 
-// Fonction pour afficher les médias du photographe dans la section `media-section`
+
 // Fonction pour afficher les médias du photographe dans la section `media-section`
 function displayPhotographerMedia(photographer, media) {
     const mediaSection = document.querySelector('.media-section');
@@ -646,6 +646,10 @@ function displayPhotographerMedia(photographer, media) {
     media.forEach(item => {
         const mediaCard = document.createElement('div');
         mediaCard.classList.add('media-card');
+		mediaCard.setAttribute('data-likes', item.likes);
+		mediaCard.setAttribute('data-date', item.date);
+		mediaCard.setAttribute('data-title', item.title);
+
 
         // Vérifier si c'est une image ou une vidéo
         if (item.image) {
@@ -653,6 +657,7 @@ function displayPhotographerMedia(photographer, media) {
                 <img src="assets/media/${photographer.name}/${item.image}" alt="${item.title}" height="200px">
                 <h3>${item.title}</h3>
                 <p>❤️ ${item.likes} likes</p>
+				<p> ${item.date} </p>
             `;
         } else if (item.video) {
             mediaCard.innerHTML = `
@@ -662,6 +667,7 @@ function displayPhotographerMedia(photographer, media) {
                 </video>
                 <h3>${item.title}</h3>
                 <p>❤️ ${item.likes} likes</p>
+				<p> ${item.date} </p>
             `;
         }
 
@@ -696,10 +702,10 @@ function initPhotographerPage() {
 initPhotographerPage();
 
 
-document.getElementById('sort-button').addEventListener('click',() => {  
-const sortOptionsElement = document.getElementById('sort-options');
-sortOptionsElement.style.display = 'block';
-});
+//document.getElementById('sort-button').addEventListener('click',() => {  
+//const sortOptionsElement = document.getElementById('sort-options');
+//sortOptionsElement.style.display = 'block';
+//});
 
 
 
@@ -707,7 +713,7 @@ sortOptionsElement.style.display = 'block';
 
 export function sortImages(criteria) {
     const gallery = document.getElementById("gallery");
-    const images = Array.from(gallery.getElementsByClassName("image"));
+    const images = Array.from(gallery.getElementsByClassName("media-card"));
 
     images.sort((a, b) => {
         if (criteria === "popularity") {
@@ -722,3 +728,18 @@ export function sortImages(criteria) {
     images.forEach(image => gallery.appendChild(image));
 }
 
+const sortGalleryByPopularityElement = document.getElementById('sort-gallery-by-popularity')
+const sortGalleryByDateElement = document.getElementById('sort-gallery-by-date')
+const sortGalleryTitleElement = document.getElementById('sort-gallery-by-title')
+
+sortGalleryByPopularityElement.addEventListener('click', ()=> { 
+	sortImages('popularity');
+ });
+
+ sortGalleryByDateElement.addEventListener('click', ()=> { 
+	sortImages('date');
+ });
+
+ sortGalleryTitleElement.addEventListener('click', ()=> { 
+	sortImages('title');
+ });
