@@ -1,6 +1,6 @@
 
 //création de pages pour chaque photographes
-
+import { sortImages } from '../utils/sortImages.js';  // Chemin relatif vers sortImages.js
 
 
 
@@ -631,8 +631,8 @@ function displayPhotographerInfo(photographer) {
 
 
 
-		document.querySelector('.photographer-picture').innerHTML = `<img src="assets/photographers/${photographer.portrait}" alt="${photographer.name}"></img>
-		  `
+		document.querySelector('.photographer-picture').innerHTML = `<img src="assets/photographers/${photographer.portrait}" alt="${photographer.name}">
+		  `;
 		
 		  
 }
@@ -702,31 +702,11 @@ function initPhotographerPage() {
 initPhotographerPage();
 
 
-//document.getElementById('sort-button').addEventListener('click',() => {  
-//const sortOptionsElement = document.getElementById('sort-options');
-//sortOptionsElement.style.display = 'block';
-//});
-
 
 
 // FONCTION MENU DÉROULANT
 
-export function sortImages(criteria) {
-    const gallery = document.getElementById("gallery");
-    const images = Array.from(gallery.getElementsByClassName("media-card"));
 
-    images.sort((a, b) => {
-        if (criteria === "popularity") {
-            return b.getAttribute("data-likes") - a.getAttribute("data-likes");
-        } else if (criteria === "likes") {
-            return new Date(b.getAttribute("data-date")) - new Date(a.getAttribute("data-date"));
-        } else if (criteria === "title") {
-            return a.getAttribute("data-title").localeCompare(b.getAttribute("data-title"));
-        }
-    });
-
-    images.forEach(image => gallery.appendChild(image));
-}
 
 const sortGalleryByPopularityElement = document.getElementById('sort-gallery-by-popularity')
 const sortGalleryByDateElement = document.getElementById('sort-gallery-by-date')
@@ -743,3 +723,19 @@ sortGalleryByPopularityElement.addEventListener('click', ()=> {
  sortGalleryTitleElement.addEventListener('click', ()=> { 
 	sortImages('title');
  });
+
+
+// Fonction pour afficher les informations du photographe dans la section `photograph-header`
+
+
+// tentatve lightbox
+
+
+const datas = {
+    media: [
+        { id: 1, photographerId: 930, title: "Race End", images: "Sport_Race_End.jpg", likes: 88, date: "2018-04-22" },
+        { id: 2, photographerId: 930, title: "Jump!", images: "Sport_Jump.jpg", likes: 95, date: "2018-04-27" },
+        { id: 3, photographerId: 930, title: "Water on Modern Building", video: "Architecture_Water_on_Modern.mp4", likes: 55, date: "2018-05-10" }
+    ]
+};
+
