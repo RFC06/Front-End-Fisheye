@@ -604,8 +604,8 @@ const data = {
 	]
 }
 
-let gallery = []
-let photographer = {}
+let gallery = [];
+let photographer = {};
 
 // Fonction pour récupérer l'ID du photographe depuis l'URL
 function getPhotographerId() {
@@ -624,7 +624,7 @@ function getMediaByPhotographerId(id) {
 }
 
 // Fonction pour afficher les informations du photographe dans la section `photograph-header`
-function displayPhotographerInfo(photographer) {
+function displayPhotographerInfo() {
   const photographerInfoDiv = document.querySelector('.photographer-info');
   photographerInfoDiv.innerHTML = `
       
@@ -642,11 +642,11 @@ function displayPhotographerInfo(photographer) {
 
 
 // Fonction pour afficher les médias du photographe dans la section `media-section`
-function displayPhotographerMedia(photographer, media) {
+function displayPhotographerMedia() {
     const mediaSection = document.querySelector('.media-section');
     mediaSection.innerHTML = ''; // Vide la section avant d'ajouter les nouveaux éléments
 
-    media.forEach(item => {
+    gallery.forEach((item, index) => {
         const mediaCard = document.createElement('div');
         mediaCard.classList.add('media-card');
 		
@@ -671,24 +671,32 @@ function displayPhotographerMedia(photographer, media) {
         }
 
         mediaSection.appendChild(mediaCard);
+
+		mediaCard.addEventListener('click',() => {
+			displayLightbox(index);
+		
+		})
+
+
+
     });
 }
 
-
-
-// 07 octobre 24 création des pages dynamiques par photographe
+function displayLightbox (index) {
+console.log(`show lightbox whith image ${gallery [index].title}`)
+}
 
 // Fonction principale pour initialiser la page du photographe
 function initPhotographerPage() {
   const photographerId = getPhotographerId(); // Récupère l'ID du photographe depuis l'URL
 
   if (photographerId) {
-      const photographer = getPhotographerById(photographerId); // Récupère les infos du photographe
+      photographer = getPhotographerById(photographerId); // Récupère les infos du photographe
 	  gallery = Array.from(getMediaByPhotographerId(photographerId)); // Récupère les médias associés
 
-      if (photographer) {
-          displayPhotographerInfo(photographer); // Affiche les infos du photographe
-          displayPhotographerMedia(photographer, media); // Affiche les médias associés
+      if (photographer.id) {
+          displayPhotographerInfo(); // Affiche les infos du photographe
+          displayPhotographerMedia(); // Affiche les médias associés
       } else {
           console.error('Photographe non trouvé !');
       }
@@ -713,14 +721,17 @@ const sortGalleryTitleElement = document.getElementById('sort-gallery-by-title')
 
 sortGalleryByPopularityElement.addEventListener('click', ()=> { 
 	gallery = sortImages(gallery,'popularity');
+	displayPhotographerMedia();
  });
 
  sortGalleryByDateElement.addEventListener('click', ()=> { 
 	gallery = sortImages(gallery,'date');
+	displayPhotographerMedia();
  });
 
  sortGalleryTitleElement.addEventListener('click', ()=> { 
 	gallery = sortImages(gallery,'title');
+	displayPhotographerMedia();
  });
 
 

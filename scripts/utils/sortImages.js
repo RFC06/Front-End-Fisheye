@@ -16,5 +16,4 @@ export function sortImages(gallery, criteria) {
 
     return gallery;
 
-    //images.forEach(image => gallery.appendChild(image));
 }
