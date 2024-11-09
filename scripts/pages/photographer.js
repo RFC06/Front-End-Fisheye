@@ -604,6 +604,9 @@ const data = {
 	]
 }
 
+let gallery = []
+let photographer = {}
+
 // Fonction pour récupérer l'ID du photographe depuis l'URL
 function getPhotographerId() {
   const params = new URLSearchParams(window.location.search);
@@ -646,11 +649,7 @@ function displayPhotographerMedia(photographer, media) {
     media.forEach(item => {
         const mediaCard = document.createElement('div');
         mediaCard.classList.add('media-card');
-		mediaCard.setAttribute('data-likes', item.likes);
-		mediaCard.setAttribute('data-date', item.date);
-		mediaCard.setAttribute('data-title', item.title);
-
-
+		
         // Vérifier si c'est une image ou une vidéo
         if (item.image) {
             mediaCard.innerHTML = `
@@ -685,7 +684,7 @@ function initPhotographerPage() {
 
   if (photographerId) {
       const photographer = getPhotographerById(photographerId); // Récupère les infos du photographe
-      const media = getMediaByPhotographerId(photographerId); // Récupère les médias associés
+	  gallery = Array.from(getMediaByPhotographerId(photographerId)); // Récupère les médias associés
 
       if (photographer) {
           displayPhotographerInfo(photographer); // Affiche les infos du photographe
@@ -713,15 +712,15 @@ const sortGalleryByDateElement = document.getElementById('sort-gallery-by-date')
 const sortGalleryTitleElement = document.getElementById('sort-gallery-by-title')
 
 sortGalleryByPopularityElement.addEventListener('click', ()=> { 
-	sortImages('popularity');
+	gallery = sortImages(gallery,'popularity');
  });
 
  sortGalleryByDateElement.addEventListener('click', ()=> { 
-	sortImages('date');
+	gallery = sortImages(gallery,'date');
  });
 
  sortGalleryTitleElement.addEventListener('click', ()=> { 
-	sortImages('title');
+	gallery = sortImages(gallery,'title');
  });
 
 
