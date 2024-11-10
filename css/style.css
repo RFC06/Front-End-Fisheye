@@ -3,8 +3,14 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
-    background-color:white;
+    background-color:white; 
 }
+
+body:has(.lightbox:has([style*="display:block"]))
+{
+    overflow: hidden;
+}
+
 
 /* En-tête */
 header {

@@ -1,9 +1,6 @@
 // FONCTION MENU DÉROULANT
 //scripts/utils/sortImages.js
 export function sortImages(gallery, criteria) {
-    //const gallery = document.getElementById("gallery");
-    //const images = Array.from(gallery.getElementsByClassName("media-card"));
-
     gallery.sort((a, b) => {
         if (criteria === "popularity") {
             return b.likes - a.likes;

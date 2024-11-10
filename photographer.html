@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/photographer.css" type="text/css">
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - Photographe</title>
@@ -37,15 +38,6 @@
             </div>
         </div>
 
-            
-
-  <!-- menu déroulant terminé --> 
-
-
-        </div>
-
-        <!-- menu déroulant terminé -->
-</div>
 
 <!-- Section pour le menu de tri -->
 <div class="dropdown">
@@ -66,15 +58,15 @@
 <section class="wrapper media-section" id="gallery">
     <!-- Les médias du photographe seront insérés ici via JavaScript -->
 
-
-  
-    
-
-    
-
 </section>
-
 </main>
+
+<!-- Lightbox structure -->
+<div id="lightbox" class="lightbox">
+      <!--  <span class="close" onclick="closeLightbox()">&times;</span>-->
+   <!--  <img id="lightbox-image" src="" alt="Lightbox-Media" style="display: block;">-->
+   <!--  <video id="lightbox-video" controls style="display: block;"></video>-->
+</div>
 
 <!-- Scripts -->
 <script type="module" src="./scripts/pages/photographer.js"></script>
@@ -86,17 +78,9 @@
     <!-- Les cartes de médias seront insérées ici via JavaScript -->
 </div>
 
-<!-- Lightbox structure -->
-<div class="media-section">
-    <!-- Les cartes de médias seront insérées ici via JavaScript -->
-</div>
 
-<!-- Lightbox structure -->
-<div id="lightbox" class="lightbox" style="display: block;">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-image" src="" alt="Lightbox-Media" style="display: block;">
-    <video id="lightbox-video" controls style="display: block;"></video>
-</div>
+
+
 
 
 </body>
