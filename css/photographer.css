@@ -138,13 +138,30 @@ form input {
 }
 
 /* Cartes des médias avec taille fixe */
+
+
+/* Cartes des médias dans la section avec adaptation à l'écran */
 .media-section img, .media-section video {
-    width: 300px;
-    height: 300px;
+    width: 100%; /* Les éléments occupent toute la largeur */
+    max-width: 100vw; /* Limite à la largeur de la fenêtre */
+    max-height: 100vh; /* Limite à la hauteur de la fenêtre */
+    height: auto; /* Garde les proportions */
     border-radius: 10px;
     object-fit: cover; /* Remplissage uniforme de la carte */
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* Style de la lightbox pour centrer les médias */
+#lightbox img, #lightbox video {
+    max-width: 100vw; /* Maximise la largeur sans dépasser l'écran */
+    max-height: 100vh; /* Maximise la hauteur sans dépasser l'écran */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* S'ajuste dans la lightbox sans couper */
+    border-radius: 10px;
+}
+
+
 
 .media-section img:hover, .media-section video:hover {
     transform: scale(1.05);
