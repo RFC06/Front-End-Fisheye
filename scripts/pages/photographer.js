@@ -765,37 +765,6 @@ sortGalleryByPopularityElement.addEventListener('click', ()=> {
 
 // FONCTION FLECHE LIGHTBOX
 
-let currentIndex = 0; // Index de l'image actuellement affichée dans la lightbox
-
-// Fonction pour ajouter des flèches de navigation à la lightbox
-function addLightboxArrows(lightboxElement, gallery) {
-    // Création de la flèche gauche
-    const leftArrow = document.createElement('div');
-    leftArrow.classList.add('lightbox-arrow', 'left-arrow');
-    leftArrow.innerHTML = '&#10094;'; // Symbole de flèche gauche
-
-    // Création de la flèche droite
-    const rightArrow = document.createElement('div');
-    rightArrow.classList.add('lightbox-arrow', 'right-arrow');
-    rightArrow.innerHTML = '&#10095;'; // Symbole de flèche droite
-
-    // Ajoute les flèches à la lightbox
-    lightboxElement.appendChild(leftArrow);
-    lightboxElement.appendChild(rightArrow);
-
-    // Ajoute les événements de clic pour naviguer entre les images
-    leftArrow.addEventListener('click', () => navigateLightbox(-1, lightboxElement, gallery));
-    rightArrow.addEventListener('click', () => navigateLightbox(1, lightboxElement, gallery));
-}
-
-// Fonction de navigation dans la lightbox
-function navigateLightbox(direction, lightboxElement, gallery) {
-    // Met à jour l'index actuel de l'image
-    currentIndex = (currentIndex + direction + gallery.length) % gallery.length;
-
-    // Met à jour le contenu de la lightbox avec la nouvelle image
-    updateLightboxContent(lightboxElement, gallery[currentIndex]);
-}
 
 
 
