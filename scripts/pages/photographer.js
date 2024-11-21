@@ -692,6 +692,8 @@ function displayLightbox(index) {
     // Affiche la lightbox en modifiant son style
     lightboxElement.style.display = 'flex';
 
+	lightboxMediaElement.innerHTML = "";
+
 
 	if (gallery[index].image) {
 		const imageElement = document.createElement('img');
@@ -710,13 +712,27 @@ function displayLightbox(index) {
 		lightboxMediaElement.append(videoElement);
 
 	}
+
+	function getPreviousIndex() {
+		if (parseInt(index) === 0)  {
+			return gallery.length - 1;
+		}
+		return parseInt(index) - 1;
+	}
+	function getNextIndex() {
+		if (parseInt(index) === gallery.length - 1)  {
+			return 0;
+		}
+		return parseInt(index) + 1;
+	}
+
+
 	const goToPreviousMediaButton = document.getElementById("previous")
-	goToPreviousMediaButton.setAttribute('data-index, index - 1');
+	goToPreviousMediaButton.setAttribute('data-index', getPreviousIndex());
 
 
 	const goToNextMediaButton = document.getElementById("next")
-	goToNextMediaButton.setAttribute('data-index, index + 1');
-
+	goToNextMediaButton.setAttribute('data-index', getNextIndex());
 
 }
 
