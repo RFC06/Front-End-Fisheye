@@ -150,52 +150,6 @@ form input {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Style de la lightbox */
-#lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1000;
-}
-
-/* Images et vidéos dans la lightbox */
-#lightbox img, #lightbox video {
-    max-width: 90%; /* Les médias occupent au maximum 90% de la largeur de l'écran */
-    max-height: 90%; /* Les médias occupent au maximum 90% de la hauteur de l'écran */
-    width: auto; /* Garde la largeur originale si possible */
-    height: auto; /* Garde la hauteur proportionnelle */
-    object-fit: contain; /* Ajuste pour éviter tout recadrage */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-
-
-
-
-#lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: white;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 1000;
-}
-
 
 
 .media-section img:hover, .media-section video:hover {

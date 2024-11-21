@@ -687,27 +687,38 @@ function displayLightbox(index) {
 
     // Sélectionne l'élément lightbox dans le DOM
     const lightboxElement = document.getElementById('lightbox');
+	const lightboxMediaElement = document.getElementById('lightbox__media');
 
     // Affiche la lightbox en modifiant son style
-    lightboxElement.style.display = 'block';
+    lightboxElement.style.display = 'flex';
 
 
 	if (gallery[index].image) {
 		const imageElement = document.createElement('img');
 		imageElement.setAttribute('src', `assets/media/${photographer.name}/${gallery[index].image}`);
-		lightboxElement.append(imageElement);
+		lightboxMediaElement.append(imageElement);
 
 
 	} else if (gallery[index].video) {
 		const videoElement = document.createElement('video');
 		videoElement.setAttribute('controls', true);
+		
 		const sourceElement = document.createElement('source');
 		sourceElement.setAttribute('type', 'video/mp4');
 		sourceElement.setAttribute('src', `assets/media/${photographer.name}/${gallery[index].video}`);
 		videoElement.append(sourceElement);
-		lightboxElement.append(videoElement);
+		lightboxMediaElement.append(videoElement);
 
-	}}
+	}
+	const goToPreviousMediaButton = document.getElementById("previous")
+	goToPreviousMediaButton.setAttribute('data-index, index - 1');
+
+
+	const goToNextMediaButton = document.getElementById("next")
+	goToNextMediaButton.setAttribute('data-index, index + 1');
+
+
+}
 
 // Fonction principale pour initialiser la page du photographe
 function initPhotographerPage() {
@@ -765,6 +776,18 @@ sortGalleryByPopularityElement.addEventListener('click', ()=> {
 
 // FONCTION FLECHE LIGHTBOX
 
+const goToPreviousMediaButton = document.getElementById("previous")
+const goToNextMediaButton = document.getElementById("next")
+
+goToPreviousMediaButton.addEventListener('click', () => {
+	displayLightbox(goToPreviousMediaButton.getAttribute('data-index'))
+
+});
+
+
+goToNextMediaButton.addEventListener('click', () => {
+		displayLightbox(goToNextMediaButton.getAttribute('data-index'))
+});
 
 
 

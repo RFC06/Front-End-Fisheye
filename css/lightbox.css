@@ -1,11 +1,40 @@
 .lightbox {
 
    display: none;
-   position: absolute;
+   position: fixed;
    top:0;
-   
-   width : 50%;
-   height:50%;
-   background-color: brown;
-   z-index:999;
+   left:0;
+   width : 100vw;
+   height:100vh;
+   background-color: white;
+   overflow: hidden;
+   z-index:1000;
+   padding: 62px 99px;
 } 
+
+.lightbox i {
+   font-size: 60px;
+   color:red;
+}
+
+.lightbox > div {
+ display:flex;
+ align-items: center;
+}
+
+
+#lightbox__media {
+  
+   width: calc(100% - (99px * 2) - (45px * 2));
+   height: calc(100% - (62px * 2));
+   overflow: hidden;
+   
+
+   img, video {
+     height:100%;
+     width:100%;
+      object-fit: cover;
+
+   }
+   
+}
